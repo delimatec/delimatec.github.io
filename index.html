@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículo Interativo | Daniel Lima</title>
+    <title>Currículo Interativo | Daniel da Silva Lima</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -131,10 +131,10 @@
                     <div class="mb-6">
                         <div id="tabs" class="flex flex-wrap gap-2 border-b border-zinc-300 pb-2 mb-4">
                             <button data-tab="cloud" class="tab-btn px-4 py-2 text-sm font-medium rounded-md bg-blue-100 text-blue-700" data-lang-key="skill_tab_cloud">Cloud Computing</button>
-                            <button data-tab="seguranca" class="tab-btn px-4 py-2 text-sm font-medium rounded-md bg-zinc-100 text-zinc-700" data-lang-key="skill_tab_security">Segurança</button>
-                            <button data-tab="redes" class="tab-btn px-4 py-2 text-sm font-medium rounded-md bg-zinc-100 text-zinc-700" data-lang-key="skill_tab_networks">Redes</button>
-                            <button data-tab="automacao" class="tab-btn px-4 py-2 text-sm font-medium rounded-md bg-zinc-100 text-zinc-700" data-lang-key="skill_tab_automation">Automação & DevOps</button>
-                            <button data-tab="outros" class="tab-btn px-4 py-2 text-sm font-medium rounded-md bg-zinc-100 text-zinc-700" data-lang-key="skill_tab_systems">Sistemas</button>
+                            <button data-tab="security" class="tab-btn px-4 py-2 text-sm font-medium rounded-md bg-zinc-100 text-zinc-700" data-lang-key="skill_tab_security">Segurança</button>
+                            <button data-tab="networks" class="tab-btn px-4 py-2 text-sm font-medium rounded-md bg-zinc-100 text-zinc-700" data-lang-key="skill_tab_networks">Redes</button>
+                            <button data-tab="automation" class="tab-btn px-4 py-2 text-sm font-medium rounded-md bg-zinc-100 text-zinc-700" data-lang-key="skill_tab_automation">Automação & DevOps</button>
+                            <button data-tab="systems" class="tab-btn px-4 py-2 text-sm font-medium rounded-md bg-zinc-100 text-zinc-700" data-lang-key="skill_tab_systems">Sistemas</button>
                         </div>
                     </div>
                     <div id="tab-content">
@@ -329,10 +329,10 @@
             const skillTabsData = {
                 pt: {
                     cloud: ['AWS', 'Google Cloud (GCP)', 'Cloud Architecture', 'Compute Engine', 'Cloud Storage'],
-                    seguranca: ['Cloud Security', 'IAM', 'Authentication', 'Firewall (pfSense)', 'VPN (IPSec)'],
-                    redes: ['Network Management', 'TCP/IP', 'VLANs & Roteamento', 'Active Directory'],
-                    automacao: ['Terraform (IaC)', 'Kubernetes', 'Docker', 'Ansible', 'Python', 'Pub/Sub'],
-                    outros: ['System Monitoring', 'Database Queries', 'Windows Server', 'Linux', 'VMware']
+                    security: ['Cloud Security', 'IAM', 'Authentication', 'Firewall (pfSense)', 'VPN (IPSec)'],
+                    networks: ['Network Management', 'TCP/IP', 'VLANs & Roteamento', 'Active Directory'],
+                    automation: ['Terraform (IaC)', 'Kubernetes', 'Docker', 'Ansible', 'Python', 'Pub/Sub'],
+                    systems: ['System Monitoring', 'Database Queries', 'Windows Server', 'Linux', 'VMware']
                 },
                 en: {
                     cloud: ['AWS', 'Google Cloud (GCP)', 'Cloud Architecture', 'Compute Engine', 'Cloud Storage'],
@@ -567,16 +567,10 @@
                  const container = document.getElementById('tab-content');
                  container.innerHTML = '';
                  
-                 const langKey = lang === 'pt' ? 'pt' : 'en';
-                 const tabData = skillTabsData[langKey];
-                 const tabMapping = {
-                     pt: { cloud: 'cloud', seguranca: 'security', redes: 'networks', automacao: 'automation', outros: 'systems' },
-                     en: { cloud: 'cloud', security: 'security', networks: 'networks', automation: 'automation', systems: 'systems' }
-                 };
-
+                 const tabData = skillTabsData[lang];
                  Object.keys(tabData).forEach((key, index) => {
                      const div = document.createElement('div');
-                     div.dataset.content = tabMapping.pt[key] || key;
+                     div.dataset.content = key;
                      div.className = `grid grid-cols-2 sm:grid-cols-3 gap-4 ${index === 0 ? '' : 'hidden'}`;
                      
                      const itemsHtml = tabData[key].map(item => `<span class="${index === 0 ? 'bg-blue-50 text-blue-800' : 'bg-zinc-200 text-zinc-800'} text-center p-2 rounded-lg text-sm">${item}</span>`).join('');
@@ -619,40 +613,30 @@
                     academicStatusEl.innerHTML = translations[lang]['academic_status'];
                 }
 
-
-                document.querySelectorAll('.tab-btn').forEach(tab => {
-                    const originalKey = tab.dataset.tab;
-                    const translatedKey = {
-                        pt: { cloud: 'cloud', seguranca: 'security', redes: 'networks', automacao: 'automation', outros: 'systems' },
-                        en: { cloud: 'cloud', security: 'security', networks: 'networks', automation: 'automation', systems: 'systems' }
-                    };
-                    tab.dataset.content_target = translatedKey.pt[originalKey] || originalKey;
-                });
-
                 renderChart(lang);
                 renderTimeline(lang);
                 renderSkillTabs(lang);
                 renderCourses(lang);
 
-                 const tabButtons = document.querySelectorAll('.tab-btn');
+                const tabButtons = document.querySelectorAll('.tab-btn');
                 tabButtons.forEach(tab => {
-                     tab.addEventListener('click', (e) => {
-                         const targetKey = e.currentTarget.dataset.tab;
-                         const targetContent = document.querySelector(`[data-content="${targetKey}"]`);
+                    tab.addEventListener('click', (e) => {
+                        const targetKey = e.currentTarget.dataset.tab;
+                        const targetContent = document.querySelector(`[data-content="${targetKey}"]`);
 
-                         document.querySelectorAll('[data-content]').forEach(c => c.classList.add('hidden'));
-                         if (targetContent) targetContent.classList.remove('hidden');
+                        document.querySelectorAll('[data-content]').forEach(c => c.classList.add('hidden'));
+                        if (targetContent) targetContent.classList.remove('hidden');
 
-                         tabButtons.forEach(t => {
-                             t.classList.remove('bg-blue-100', 'text-blue-700');
-                             t.classList.add('bg-zinc-100', 'text-zinc-700');
-                         });
-                         e.currentTarget.classList.add('bg-blue-100', 'text-blue-700');
-                         e.currentTarget.classList.remove('bg-zinc-100', 'text-zinc-700');
-                     });
-                 });
-                 // re-trigger click on the first tab to apply styles
-                 document.querySelector('.tab-btn').click();
+                        tabButtons.forEach(t => {
+                            t.classList.remove('bg-blue-100', 'text-blue-700');
+                            t.classList.add('bg-zinc-100', 'text-zinc-700');
+                        });
+                        e.currentTarget.classList.add('bg-blue-100', 'text-blue-700');
+                        e.currentTarget.classList.remove('bg-zinc-100', 'text-zinc-700');
+                    });
+                });
+                
+                document.querySelector('.tab-btn[data-tab="cloud"]').click();
             }
 
             const langButtons = document.querySelectorAll('.lang-btn');
