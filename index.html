@@ -64,6 +64,46 @@
             background-color: #2563eb;
             color: white;
         }
+        
+        @media print {
+            body {
+                background-color: white;
+            }
+            header, footer, #contato, .chart-container, #tabs, .validated-skills-section, .details-toggle, #mobile-menu-btn, .lang-selector-group, .contact-button-group, .print-button-group {
+                display: none !important;
+            }
+            main {
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            section {
+                margin-bottom: 2rem !important;
+                padding: 0 !important;
+            }
+            .timeline-item:before {
+                display: none;
+            }
+            #timeline-container {
+                border-left: none !important;
+                padding-left: 0 !important;
+            }
+            .details-content {
+                max-height: none !important;
+                opacity: 1 !important;
+                overflow: visible !important;
+            }
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+            .grid, .flex {
+                display: block;
+            }
+            .bg-white {
+                box-shadow: none !important;
+                border: none !important;
+            }
+        }
     </style>
 </head>
 <body class="text-zinc-800">
@@ -81,8 +121,13 @@
                 <a href="#contato" class="nav-link text-zinc-600 hover:text-blue-600 font-medium" data-lang-key="nav_contact_main">Contato</a>
             </div>
              <div class="hidden md:flex items-center space-x-4">
-                <a href="#contato" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors" data-lang-key="nav_contact_btn">Contato</a>
-                <div class="flex rounded-md bg-zinc-200 p-0.5">
+                <div class="contact-button-group">
+                    <a href="#contato" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors" data-lang-key="nav_contact_btn">Contato</a>
+                </div>
+                 <div class="print-button-group">
+                    <button id="print-btn" class="text-sm font-medium bg-white border border-zinc-300 text-zinc-700 px-4 py-2 rounded-lg hover:bg-zinc-100 transition-colors" data-lang-key="print_button_text">Imprimir</button>
+                </div>
+                <div class="flex rounded-md bg-zinc-200 p-0.5 lang-selector-group">
                     <button class="lang-btn active px-2 py-1 text-xs font-bold rounded" data-lang="pt">PT</button>
                     <button class="lang-btn px-2 py-1 text-xs font-bold rounded" data-lang="en">EN</button>
                 </div>
@@ -140,7 +185,7 @@
                     <div id="tab-content">
                         <!-- Content will be populated by JS -->
                     </div>
-                     <div class="mt-8">
+                     <div class="mt-8 validated-skills-section">
                         <h4 class="font-bold text-zinc-800 mb-3" data-lang-key="validated_skills_title">Competências Validadas (Credly)</h4>
                         <div class="flex flex-wrap gap-2">
                              <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-600 bg-green-200" data-lang-key="in_demand_tag">IN DEMAND</span>
@@ -248,6 +293,7 @@
                     nav_education: "Formação",
                     nav_contact_main: "Contato",
                     nav_contact_btn: "Contato",
+                    print_button_text: "Imprimir",
                     nav_about_mobile: "Sobre",
                     nav_skills_mobile: "Competências",
                     nav_experience_mobile: "Experiência",
@@ -290,6 +336,7 @@
                     nav_education: "Education",
                     nav_contact_main: "Contact",
                     nav_contact_btn: "Contact",
+                    print_button_text: "Print",
                     nav_about_mobile: "About",
                     nav_skills_mobile: "Skills",
                     nav_experience_mobile: "Experience",
@@ -647,6 +694,11 @@
                     langButtons.forEach(btn => btn.classList.remove('active'));
                     document.querySelectorAll(`.lang-btn[data-lang="${lang}"]`).forEach(b => b.classList.add('active'));
                 });
+            });
+
+            // Print button
+            document.getElementById('print-btn').addEventListener('click', () => {
+                window.print();
             });
 
             // Initial render
