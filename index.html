@@ -178,7 +178,7 @@
                 </a>
                  <div class="bg-white p-6 rounded-lg shadow-md">
                     <h3 class="text-xl font-bold mb-2" data-lang-key="academic_title">Formação Acadêmica</h3>
-                    <p class="text-zinc-800 font-semibold" data-lang-key="academic_degree">Bacharelado em Gestão de Sistemas de Informação (Cursando) <span class="text-red-500 font-normal" data-lang-key="academic_status">(Incompleto)</span></p>
+                    <p class="text-zinc-800 font-semibold" data-lang-key="academic_degree">Bacharelado em Gestão de Sistemas de Informação <span class="text-blue-500 font-normal" data-lang-key="academic_status">(Cursando)</span></p>
                     <p class="text-zinc-500">Anhanguera Educacional</p>
                 </div>
             </div>
@@ -271,7 +271,7 @@
                     cert_view: "Ver Credencial &rarr;",
                     academic_title: "Formação Acadêmica",
                     academic_degree: "Bacharelado em Gestão de Sistemas de Informação ",
-                    academic_status: "(Incompleto)",
+                    academic_status: "(Cursando)",
                     dev_title: "Desenvolvimento Profissional (Alura)",
                     contact_title: "Entre em Contato",
                     footer_name: "Daniel Lima",
@@ -313,7 +313,7 @@
                     cert_view: "View Credential &rarr;",
                     academic_title: "Academic Background",
                     academic_degree: "Bachelor's in Information Systems Management ",
-                    academic_status: "(Incomplete)",
+                    academic_status: "(Ongoing)",
                     dev_title: "Professional Development (Alura)",
                     contact_title: "Get in Touch",
                     footer_name: "Daniel Lima",
@@ -606,9 +606,19 @@
                 elements.forEach(el => {
                     const key = el.dataset.langKey;
                     if (translations[lang][key]) {
-                        el.innerHTML = translations[lang][key];
+                         if (key === 'academic_degree') {
+                            el.childNodes[0].nodeValue = translations[lang][key];
+                        } else {
+                            el.innerHTML = translations[lang][key];
+                        }
                     }
                 });
+
+                const academicStatusEl = document.querySelector('[data-lang-key="academic_status"]');
+                if (academicStatusEl) {
+                    academicStatusEl.innerHTML = translations[lang]['academic_status'];
+                }
+
 
                 document.querySelectorAll('.tab-btn').forEach(tab => {
                     const originalKey = tab.dataset.tab;
