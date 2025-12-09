@@ -3,20 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículo Interativo | Daniel da Silva Lima</title>
+
+    <title>Currículo Interativo | Daniel Lima – Analista de Infraestrutura & Cloud</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Currículo interativo de Daniel Lima, Analista de Infraestrutura especializado em Cloud AWS & GCP, Redes, Segurança da Informação, DevOps e Monitoramento.">
+    <meta name="keywords" content="Daniel Lima, currículo, Analista de Infraestrutura, Cloud, AWS, GCP, Redes, Segurança, DevOps, Zabbix, VMware">
+    <meta name="author" content="Daniel Lima">
+
+    <!-- Open Graph (compartilhamento em LinkedIn, WhatsApp, etc.) -->
+    <meta property="og:title" content="Currículo Interativo | Daniel Lima – Infraestrutura & Cloud">
+    <meta property="og:description" content="Currículo moderno, interativo e multilíngue de Daniel Lima – Analista de Infraestrutura, Cloud AWS & GCP, Redes e Segurança.">
+    <!-- Se tiver uma imagem de capa no repositório, ajuste a URL abaixo -->
+    <!-- <meta property="og:image" content="https://seu-dominio.com/imagens/capa-curriculo-daniel.png"> -->
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind (CDN para facilidade de uso) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Chosen Palette: Soothing Stone -->
-    <!-- Application Structure Plan: A single-page application with a top navigation bar for quick access to key sections: Sobre, Competências, Experiência, e Formação. A language switcher is added for international accessibility. The structure is designed to tell a professional story, starting with a summary, moving to a visualized and interactive skills section, followed by a chronological and expandable career timeline, and ending with education and certifications. -->
-    <!-- Visualization & Content Choices: 
-        - Competências: Goal is to organize and compare skills. A Radar chart (Chart.js) visually summarizes core strengths, while interactive tabs allow users to explore specific technologies without being overwhelmed. A new section for validated skills from Credly adds third-party validation.
-        - Experiência: Goal is to show career progression. A vertical timeline (HTML/Tailwind) with expandable details keeps the UI clean and encourages interaction.
-        - Formação: Goal is to present qualifications clearly. A card-based layout (HTML/Tailwind) organizes certifications and education into distinct, easy-to-read blocks. A new list for Alura courses is added to showcase continuous learning.
-    -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -64,12 +73,12 @@
             background-color: #2563eb;
             color: white;
         }
-        
+
         @media print {
             body {
                 background-color: white;
             }
-            header, footer, #contato, .chart-container, #tabs, .validated-skills-section, .details-toggle, #mobile-menu-btn, .lang-selector-group, .contact-button-group, .print-button-group {
+            header, footer, #contato, .chart-container, #tabs, .validated-skills-section, .details-toggle, #mobile-menu-btn, .lang-selector-group, .contact-button-group, .print-button-group, .download-button-group {
                 display: none !important;
             }
             main {
@@ -108,617 +117,644 @@
 </head>
 <body class="text-zinc-800">
 
-    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-xl font-bold text-zinc-800" data-lang-key="name_header">
-                Daniel Lima
+<header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="text-xl font-bold text-zinc-800" data-lang-key="name_header">
+            Daniel Lima
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+            <a href="#sobre" class="nav-link text-zinc-600 hover:text-blue-600 font-medium" data-lang-key="nav_about">Sobre</a>
+            <a href="#competencias" class="nav-link text-zinc-600 hover:text-blue-600 font-medium" data-lang-key="nav_skills">Competências</a>
+            <a href="#experiencia" class="nav-link text-zinc-600 hover:text-blue-600 font-medium" data-lang-key="nav_experience">Experiência</a>
+            <a href="#formacao" class="nav-link text-zinc-600 hover:text-blue-600 font-medium" data-lang-key="nav_education">Formação</a>
+            <a href="#contato" class="nav-link text-zinc-600 hover:text-blue-600 font-medium" data-lang-key="nav_contact_main">Contato</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-4">
+            <div class="download-button-group">
+                <a href="Curriculo_Daniel_Lima_Moderno_Final.pdf"
+                   class="bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition-colors text-sm font-medium"
+                   target="_blank" rel="noopener">
+                    Baixar PDF
+                </a>
             </div>
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#sobre" class="nav-link text-zinc-600 hover:text-blue-600 font-medium" data-lang-key="nav_about">Sobre</a>
-                <a href="#competencias" class="nav-link text-zinc-600 hover:text-blue-600 font-medium" data-lang-key="nav_skills">Competências</a>
-                <a href="#experiencia" class="nav-link text-zinc-600 hover:text-blue-600 font-medium" data-lang-key="nav_experience">Experiência</a>
-                <a href="#formacao" class="nav-link text-zinc-600 hover:text-blue-600 font-medium" data-lang-key="nav_education">Formação</a>
-                <a href="#contato" class="nav-link text-zinc-600 hover:text-blue-600 font-medium" data-lang-key="nav_contact_main">Contato</a>
+            <div class="contact-button-group">
+                <a href="#contato" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors" data-lang-key="nav_contact_btn">Contato</a>
             </div>
-             <div class="hidden md:flex items-center space-x-4">
-                <div class="contact-button-group">
-                    <a href="#contato" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors" data-lang-key="nav_contact_btn">Contato</a>
+            <div class="print-button-group">
+                <button id="print-btn" class="text-sm font-medium bg-white border border-zinc-300 text-zinc-700 px-4 py-2 rounded-lg hover:bg-zinc-100 transition-colors" data-lang-key="print_button_text">Imprimir</button>
+            </div>
+            <div class="flex rounded-md bg-zinc-200 p-0.5 lang-selector-group">
+                <button class="lang-btn active px-2 py-1 text-xs font-bold rounded" data-lang="pt">PT</button>
+                <button class="lang-btn px-2 py-1 text-xs font-bold rounded" data-lang="en">EN</button>
+            </div>
+        </div>
+        <div class="md:hidden">
+            <button id="mobile-menu-btn" class="text-zinc-800 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-lg">
+        <a href="#sobre" class="block text-center py-2 text-zinc-700 hover:bg-blue-50" data-lang-key="nav_about_mobile">Sobre</a>
+        <a href="#competencias" class="block text-center py-2 text-zinc-700 hover:bg-blue-50" data-lang-key="nav_skills_mobile">Competências</a>
+        <a href="#experiencia" class="block text-center py-2 text-zinc-700 hover:bg-blue-50" data-lang-key="nav_experience_mobile">Experiência</a>
+        <a href="#formacao" class="block text-center py-2 text-zinc-700 hover:bg-blue-50" data-lang-key="nav_education_mobile">Formação</a>
+        <a href="#contato" class="block text-center py-2 text-zinc-700 hover:bg-blue-50" data-lang-key="nav_contact_mobile">Contato</a>
+        <div class="flex justify-center my-4">
+            <div class="flex rounded-md bg-zinc-200 p-1">
+                <button class="lang-btn active px-3 py-1 text-sm font-bold rounded" data-lang="pt">PT</button>
+                <button class="lang-btn px-3 py-1 text-sm font-bold rounded" data-lang="en">EN</button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="container mx-auto px-6 py-12 md:py-20">
+
+    <!-- SOBRE -->
+    <section id="sobre" class="text-center mb-20 md:mb-32">
+        <h1 class="text-4xl md:text-6xl font-bold text-zinc-900 mb-4" data-lang-key="main_name">Daniel Lima</h1>
+        <p class="text-lg md:text-xl text-blue-600 font-medium mb-6" data-lang-key="main_title">
+            Analista de Infraestrutura de TI | Cloud AWS & GCP | Redes & Segurança
+        </p>
+        <p class="max-w-3xl mx-auto text-zinc-600 leading-relaxed" data-lang-key="main_summary">
+            Analista de Infraestrutura com mais de 5 anos de experiência em TI, especialista em ambientes corporativos de alta disponibilidade e foco em Cloud (AWS/GCP), Segurança da Informação, Redes, Virtualização, Backup e Monitoramento. Atuo de forma proativa na prevenção de incidentes, otimização de custos e automação de tarefas, sempre buscando estabilidade, segurança e melhoria contínua dos serviços de TI.
+        </p>
+    </section>
+
+    <!-- COMPETÊNCIAS -->
+    <section id="competencias" class="mb-20 md:mb-32">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-zinc-900" data-lang-key="skills_title">Principais Competências</h2>
+        <div class="grid md:grid-cols-5 gap-12 items-center">
+            <div class="md:col-span-2">
+                <div class="chart-container relative mx-auto" style="max-width: 450px; height: 350px; max-height: 400px;">
+                    <canvas id="skillsChart"></canvas>
                 </div>
-                 <div class="print-button-group">
-                    <button id="print-btn" class="text-sm font-medium bg-white border border-zinc-300 text-zinc-700 px-4 py-2 rounded-lg hover:bg-zinc-100 transition-colors" data-lang-key="print_button_text">Imprimir</button>
-                </div>
-                <div class="flex rounded-md bg-zinc-200 p-0.5 lang-selector-group">
-                    <button class="lang-btn active px-2 py-1 text-xs font-bold rounded" data-lang="pt">PT</button>
-                    <button class="lang-btn px-2 py-1 text-xs font-bold rounded" data-lang="en">EN</button>
-                </div>
             </div>
-            <div class="md:hidden">
-                <button id="mobile-menu-btn" class="text-zinc-800 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
-            </div>
-        </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-lg">
-            <a href="#sobre" class="block text-center py-2 text-zinc-700 hover:bg-blue-50" data-lang-key="nav_about_mobile">Sobre</a>
-            <a href="#competencias" class="block text-center py-2 text-zinc-700 hover:bg-blue-50" data-lang-key="nav_skills_mobile">Competências</a>
-            <a href="#experiencia" class="block text-center py-2 text-zinc-700 hover:bg-blue-50" data-lang-key="nav_experience_mobile">Experiência</a>
-            <a href="#formacao" class="block text-center py-2 text-zinc-700 hover:bg-blue-50" data-lang-key="nav_education_mobile">Formação</a>
-            <a href="#contato" class="block text-center py-2 text-zinc-700 hover:bg-blue-50" data-lang-key="nav_contact_mobile">Contato</a>
-             <div class="flex justify-center my-4">
-                <div class="flex rounded-md bg-zinc-200 p-1">
-                    <button class="lang-btn active px-3 py-1 text-sm font-bold rounded" data-lang="pt">PT</button>
-                    <button class="lang-btn px-3 py-1 text-sm font-bold rounded" data-lang="en">EN</button>
+            <div class="md:col-span-3">
+                <div class="mb-6">
+                    <div id="tabs" class="flex flex-wrap gap-2 border-b border-zinc-300 pb-2 mb-4">
+                        <button data-tab="cloud" class="tab-btn px-4 py-2 text-sm font-medium rounded-md bg-blue-100 text-blue-700" data-lang-key="skill_tab_cloud">Cloud Computing</button>
+                        <button data-tab="security" class="tab-btn px-4 py-2 text-sm font-medium rounded-md bg-zinc-100 text-zinc-700" data-lang-key="skill_tab_security">Segurança</button>
+                        <button data-tab="networks" class="tab-btn px-4 py-2 text-sm font-medium rounded-md bg-zinc-100 text-zinc-700" data-lang-key="skill_tab_networks">Redes</button>
+                        <button data-tab="automation" class="tab-btn px-4 py-2 text-sm font-medium rounded-md bg-zinc-100 text-zinc-700" data-lang-key="skill_tab_automation">Automação & DevOps</button>
+                        <button data-tab="systems" class="tab-btn px-4 py-2 text-sm font-medium rounded-md bg-zinc-100 text-zinc-700" data-lang-key="skill_tab_systems">Sistemas</button>
+                    </div>
+                </div>
+                <div id="tab-content">
+                    <!-- preenchido via JS -->
+                </div>
+                <div class="mt-8 validated-skills-section">
+                    <h4 class="font-bold text-zinc-800 mb-3" data-lang-key="validated_skills_title">Competências Validadas (Certificações)</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-600 bg-green-200" data-lang-key="in_demand_tag">EM ALTA</span>
+                        <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-purple-600 bg-purple-200" data-lang-key="future_proof_tag">À PROVA DE FUTURO</span>
+                    </div>
+                    <div class="mt-3 flex flex-wrap gap-3">
+                        <span class="bg-white border border-zinc-300 shadow-sm text-zinc-800 text-center p-2 rounded-lg text-sm">Cloud Security</span>
+                        <span class="bg-white border border-zinc-300 shadow-sm text-zinc-800 text-center p-2 rounded-lg text-sm">IAM</span>
+                        <span class="bg-white border border-zinc-300 shadow-sm text-zinc-800 text-center p-2 rounded-lg text-sm">Terraform (IaC)</span>
+                        <span class="bg-white border border-zinc-300 shadow-sm text-zinc-800 text-center p-2 rounded-lg text-sm">System Monitoring</span>
+                        <span class="bg-white border border-zinc-300 shadow-sm text-zinc-800 text-center p-2 rounded-lg text-sm">Network Design</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <main class="container mx-auto px-6 py-12 md:py-20">
-
-        <section id="sobre" class="text-center mb-20 md:mb-32">
-            <h1 class="text-4xl md:text-6xl font-bold text-zinc-900 mb-4" data-lang-key="main_name">Daniel Lima</h1>
-            <p class="text-lg md:text-xl text-blue-600 font-medium mb-6" data-lang-key="main_title">Analista de Infraestrutura de TI | Redes e Segurança | Cloud AWS & GCP</p>
-            <p class="max-w-3xl mx-auto text-zinc-600 leading-relaxed" data-lang-key="main_summary">
-                Analista de Infraestrutura com mais de 5 anos de experiência, especializado em garantir a alta disponibilidade, segurança e eficiência de ambientes de TI híbridos. Possuo sólida vivência em administração de redes, segurança da informação, e implementação de soluções em nuvem na AWS e GCP, com foco em recuperação de desastres, automação e monitoramento proativo. Busco um novo desafio onde possa aplicar minhas habilidades para otimizar a infraestrutura e contribuir para projetos inovadores.
-            </p>
-        </section>
-
-        <section id="competencias" class="mb-20 md:mb-32">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-zinc-900" data-lang-key="skills_title">Principais Competências</h2>
-            <div class="grid md:grid-cols-5 gap-12 items-center">
-                <div class="md:col-span-2">
-                     <div class="chart-container relative mx-auto" style="max-width: 450px; height: 350px; max-height: 400px;">
-                        <canvas id="skillsChart"></canvas>
-                    </div>
-                </div>
-                <div class="md:col-span-3">
-                    <div class="mb-6">
-                        <div id="tabs" class="flex flex-wrap gap-2 border-b border-zinc-300 pb-2 mb-4">
-                            <button data-tab="cloud" class="tab-btn px-4 py-2 text-sm font-medium rounded-md bg-blue-100 text-blue-700" data-lang-key="skill_tab_cloud">Cloud Computing</button>
-                            <button data-tab="security" class="tab-btn px-4 py-2 text-sm font-medium rounded-md bg-zinc-100 text-zinc-700" data-lang-key="skill_tab_security">Segurança</button>
-                            <button data-tab="networks" class="tab-btn px-4 py-2 text-sm font-medium rounded-md bg-zinc-100 text-zinc-700" data-lang-key="skill_tab_networks">Redes</button>
-                            <button data-tab="automation" class="tab-btn px-4 py-2 text-sm font-medium rounded-md bg-zinc-100 text-zinc-700" data-lang-key="skill_tab_automation">Automação & DevOps</button>
-                            <button data-tab="systems" class="tab-btn px-4 py-2 text-sm font-medium rounded-md bg-zinc-100 text-zinc-700" data-lang-key="skill_tab_systems">Sistemas</button>
-                        </div>
-                    </div>
-                    <div id="tab-content">
-                        <!-- Content will be populated by JS -->
-                    </div>
-                     <div class="mt-8 validated-skills-section">
-                        <h4 class="font-bold text-zinc-800 mb-3" data-lang-key="validated_skills_title">Competências Validadas (Credly)</h4>
-                        <div class="flex flex-wrap gap-2">
-                             <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-600 bg-green-200" data-lang-key="in_demand_tag">IN DEMAND</span>
-                             <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-purple-600 bg-purple-200" data-lang-key="future_proof_tag">FUTURE PROOF</span>
-                        </div>
-                        <div class="mt-3 flex flex-wrap gap-3">
-                           <span class="bg-white border border-zinc-300 shadow-sm text-zinc-800 text-center p-2 rounded-lg text-sm">IAM</span>
-                           <span class="bg-white border border-zinc-300 shadow-sm text-zinc-800 text-center p-2 rounded-lg text-sm">Kubernetes</span>
-                           <span class="bg-white border border-zinc-300 shadow-sm text-zinc-800 text-center p-2 rounded-lg text-sm">Terraform</span>
-                           <span class="bg-white border border-zinc-300 shadow-sm text-zinc-800 text-center p-2 rounded-lg text-sm">Cloud Security</span>
-                           <span class="bg-white border border-zinc-300 shadow-sm text-zinc-800 text-center p-2 rounded-lg text-sm">System Monitoring</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="experiencia" class="mb-20 md:mb-32">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-zinc-900" data-lang-key="experience_title">Experiência Profissional</h2>
-            <div id="timeline-container" class="relative max-w-2xl mx-auto border-l-2 border-zinc-300 pl-10">
-                 <!-- Timeline items will be populated by JS -->
-            </div>
-        </section>
-
-        <section id="formacao" class="mb-20 md:mb-32">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-zinc-900" data-lang-key="education_title">Formação e Qualificações</h2>
-             <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <a href="https://www.credly.com/users/daniel-da-silva-lima" target="_blank" class="block bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-500 hover:shadow-lg hover:scale-105 transition-transform">
-                    <h3 class="text-xl font-bold mb-2" data-lang-key="cert_title">Certificação Oficial</h3>
-                    <p class="text-zinc-800 font-semibold">Associate Cloud Engineer</p>
-                    <div class="flex justify-between items-center mt-2">
-                         <p class="text-zinc-500">Google</p>
-                         <span class="text-xs text-blue-600 font-semibold" data-lang-key="cert_view">Ver Credencial &rarr;</span>
-                    </div>
-                </a>
-                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-bold mb-2" data-lang-key="academic_title">Formação Acadêmica</h3>
-                    <p class="text-zinc-800 font-semibold" data-lang-key="academic_degree">Bacharelado em Gestão de Sistemas de Informação <span class="text-blue-500 font-normal" data-lang-key="academic_status">(Cursando)</span></p>
-                    <p class="text-zinc-500">Anhanguera Educacional</p>
-                </div>
-            </div>
-            <div class="max-w-4xl mx-auto mt-8">
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-bold mb-4 text-center" data-lang-key="dev_title">Desenvolvimento Profissional (Alura)</h3>
-                    <div id="courses-container" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-center">
-                        <!-- Courses will be populated by JS -->
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contato" class="mb-20 md:mb-32">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-zinc-900" data-lang-key="contact_title">Entre em Contato</h2>
-            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-                <a href="mailto:dann.lima27@gmail.com" class="bg-white p-6 rounded-lg shadow-md flex items-center space-x-4 hover:shadow-lg hover:scale-105 transition-transform">
-                    <div class="bg-blue-100 p-3 rounded-full">
-                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-lg">E-mail</h3>
-                        <p class="text-blue-600">dann.lima27@gmail.com</p>
-                    </div>
-                </a>
-                <a href="https://wa.me/5511963029728" target="_blank" class="bg-white p-6 rounded-lg shadow-md flex items-center space-x-4 hover:shadow-lg hover:scale-105 transition-transform">
-                    <div class="bg-blue-100 p-3 rounded-full">
-                        <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.487 5.235 3.487 8.413 0 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.447-4.433-9.886-9.888-9.886-5.448 0-9.886 4.434-9.889 9.885-.002 2.024.604 3.965 1.735 5.625l-.44 1.595 1.597-.441z"/></svg>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-lg">WhatsApp</h3>
-                        <p class="text-blue-600">11 96302-9728</p>
-                    </div>
-                </a>
-                <a href="https://www.linkedin.com/in/daniel-lima27" target="_blank" class="bg-white p-6 rounded-lg shadow-md flex items-center space-x-4 hover:shadow-lg hover:scale-105 transition-transform">
-                    <div class="bg-blue-100 p-3 rounded-full">
-                        <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-lg">LinkedIn</h3>
-                        <p class="text-blue-600">/in/daniel-lima27</p>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="bg-zinc-800 text-zinc-300">
-        <div class="container mx-auto px-6 py-8 text-center">
-             <p class="font-bold text-lg mb-2" data-lang-key="footer_name">Daniel Lima</p>
-            <p class="mb-4" data-lang-key="footer_availability">Disponível para novas oportunidades.</p>
-            <a href="mailto:dann.lima27@gmail.com" class="text-blue-400 hover:text-blue-300 transition-colors">dann.lima27@gmail.com</a>
-            <p class="text-sm text-zinc-500 mt-8" data-lang-key="footer_credits">&copy; 2024 - Desenvolvido para Daniel Lima</p>
+    <!-- EXPERIÊNCIA -->
+    <section id="experiencia" class="mb-20 md:mb-32">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-zinc-900" data-lang-key="experience_title">Experiência Profissional</h2>
+        <div id="timeline-container" class="relative max-w-2xl mx-auto border-l-2 border-zinc-300 pl-10">
+            <!-- preenchido via JS -->
         </div>
-    </footer>
+    </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            
-            const translations = {
-                pt: {
-                    name_header: "Daniel Lima",
-                    nav_about: "Sobre",
-                    nav_skills: "Competências",
-                    nav_experience: "Experiência",
-                    nav_education: "Formação",
-                    nav_contact_main: "Contato",
-                    nav_contact_btn: "Contato",
-                    print_button_text: "Imprimir",
-                    nav_about_mobile: "Sobre",
-                    nav_skills_mobile: "Competências",
-                    nav_experience_mobile: "Experiência",
-                    nav_education_mobile: "Formação",
-                    nav_contact_mobile: "Contato",
-                    main_name: "Daniel Lima",
-                    main_title: "Analista de Infraestrutura de TI | Redes e Segurança | Cloud AWS & GCP",
-                    main_summary: "Analista de Infraestrutura com mais de 5 anos de experiência, especializado em garantir a alta disponibilidade, segurança e eficiência de ambientes de TI híbridos. Possuo sólida vivência em administração de redes, segurança da informação, e implementação de soluções em nuvem na AWS e GCP, com foco em recuperação de desastres, automação e monitoramento proativo. Busco um novo desafio onde possa aplicar minhas habilidades para otimizar a infraestrutura e contribuir para projetos inovadores.",
-                    skills_title: "Principais Competências",
-                    skill_tab_cloud: "Cloud Computing",
-                    skill_tab_security: "Segurança",
-                    skill_tab_networks: "Redes",
-                    skill_tab_automation: "Automação & DevOps",
-                    skill_tab_systems: "Sistemas",
-                    validated_skills_title: "Competências Validadas (Credly)",
-                    in_demand_tag: "EM ALTA",
-                    future_proof_tag: "À PROVA DE FUTURO",
-                    experience_title: "Experiência Profissional",
-                    education_title: "Formação e Qualificações",
-                    cert_title: "Certificação Oficial",
-                    cert_view: "Ver Credencial &rarr;",
-                    academic_title: "Formação Acadêmica",
-                    academic_degree: "Bacharelado em Gestão de Sistemas de Informação ",
-                    academic_status: "(Cursando)",
-                    dev_title: "Desenvolvimento Profissional (Alura)",
-                    contact_title: "Entre em Contato",
-                    footer_name: "Daniel Lima",
-                    footer_availability: "Disponível para novas oportunidades.",
-                    footer_credits: "&copy; 2024 - Desenvolvido para Daniel Lima",
-                    chart_labels: ['Cloud', 'Segurança', 'Redes', 'Automação', 'Virtualização', 'Monitoramento'],
-                    chart_dataset_label: 'Nível de Proficiência',
-                    details_toggle_view: "Ver detalhes +",
-                    details_toggle_hide: "Ocultar detalhes -",
+    <!-- FORMAÇÃO / CERTIFICAÇÕES / CURSOS -->
+    <section id="formacao" class="mb-20 md:mb-32">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-zinc-900" data-lang-key="education_title">Formação e Qualificações</h2>
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <a href="https://www.credly.com/users/daniel-da-silva-lima" target="_blank" class="block bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-500 hover:shadow-lg hover:scale-105 transition-transform">
+                <h3 class="text-xl font-bold mb-2" data-lang-key="cert_title">Certificações em Cloud</h3>
+                <p class="text-zinc-800 font-semibold">
+                    Google Cloud – Associate Cloud Engineer<br>
+                    AWS Educate – Getting Started with Compute
+                </p>
+                <div class="flex justify-between items-center mt-2">
+                    <p class="text-zinc-500">Google Cloud & AWS</p>
+                    <span class="text-xs text-blue-600 font-semibold" data-lang-key="cert_view">Ver Credencial &rarr;</span>
+                </div>
+            </a>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-bold mb-2" data-lang-key="academic_title">Formação Acadêmica</h3>
+                <p class="text-zinc-800 font-semibold" data-lang-key="academic_degree">
+                    Tecnologia em Análise e Desenvolvimento de Sistemas
+                    <span class="text-blue-500 font-normal" data-lang-key="academic_status">(Em andamento)</span>
+                </p>
+                <p class="text-zinc-500">Anhanguera Educacional</p>
+            </div>
+        </div>
+
+        <div class="max-w-4xl mx-auto mt-8">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-bold mb-4 text-center" data-lang-key="dev_title">Desenvolvimento Profissional (Alura)</h3>
+                <div id="courses-container" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-center">
+                    <!-- preenchido via JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="mb-20 md:mb-32">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-zinc-900" data-lang-key="contact_title">Entre em Contato</h2>
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <a href="mailto:dann.lima27@gmail.com" class="bg-white p-6 rounded-lg shadow-md flex items-center space-x-4 hover:shadow-lg hover:scale-105 transition-transform">
+                <div class="bg-blue-100 p-3 rounded-full">
+                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-lg">E-mail</h3>
+                    <p class="text-blue-600">dann.lima27@gmail.com</p>
+                </div>
+            </a>
+
+            <a href="https://wa.me/5511963029728" target="_blank" class="bg-white p-6 rounded-lg flex items-center space-x-4 shadow-md hover:shadow-lg hover:scale-105 transition-transform">
+                <div class="bg-blue-100 p-3 rounded-full">
+                    <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.487 5.235 3.487 8.413 0 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.447-4.433-9.886-9.888-9.886-5.448 0-9.886 4.434-9.889 9.885-.002 2.024.604 3.965 1.735 5.625l-.44 1.595 1.597-.441z"/>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-lg">WhatsApp</h3>
+                    <p class="text-blue-600">11 96302-9728</p>
+                </div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/daniel-lima27" target="_blank" class="bg-white p-6 rounded-lg shadow-md flex items-center space-x-4 hover:shadow-lg hover:scale-105 transition-transform">
+                <div class="bg-blue-100 p-3 rounded-full">
+                    <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-lg">LinkedIn</h3>
+                    <p class="text-blue-600">/in/daniel-lima27</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+</main>
+
+<footer class="bg-zinc-800 text-zinc-300">
+    <div class="container mx-auto px-6 py-8 text-center">
+        <p class="font-bold text-lg mb-2" data-lang-key="footer_name">Daniel Lima</p>
+        <p class="mb-4" data-lang-key="footer_availability">Disponível para novas oportunidades.</p>
+        <a href="mailto:dann.lima27@gmail.com" class="text-blue-400 hover:text-blue-300 transition-colors">dann.lima27@gmail.com</a>
+        <p class="text-sm text-zinc-500 mt-8" data-lang-key="footer_credits">&copy; 2024 - Desenvolvido para Daniel Lima</p>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        const translations = {
+            pt: {
+                name_header: "Daniel Lima",
+                nav_about: "Sobre",
+                nav_skills: "Competências",
+                nav_experience: "Experiência",
+                nav_education: "Formação",
+                nav_contact_main: "Contato",
+                nav_contact_btn: "Contato",
+                print_button_text: "Imprimir",
+                nav_about_mobile: "Sobre",
+                nav_skills_mobile: "Competências",
+                nav_experience_mobile: "Experiência",
+                nav_education_mobile: "Formação",
+                nav_contact_mobile: "Contato",
+                main_name: "Daniel Lima",
+                main_title: "Analista de Infraestrutura de TI | Cloud AWS & GCP | Redes & Segurança",
+                main_summary: "Analista de Infraestrutura com mais de 5 anos de experiência em TI, especialista em ambientes corporativos de alta disponibilidade e foco em Cloud (AWS/GCP), Segurança da Informação, Redes, Virtualização, Backup e Monitoramento. Atuo de forma proativa na prevenção de incidentes, otimização de custos e automação de tarefas, sempre buscando estabilidade, segurança e melhoria contínua dos serviços de TI.",
+                skills_title: "Principais Competências",
+                skill_tab_cloud: "Cloud Computing",
+                skill_tab_security: "Segurança",
+                skill_tab_networks: "Redes",
+                skill_tab_automation: "Automação & DevOps",
+                skill_tab_systems: "Sistemas",
+                validated_skills_title: "Competências Validadas (Certificações)",
+                in_demand_tag: "EM ALTA",
+                future_proof_tag: "À PROVA DE FUTURO",
+                experience_title: "Experiência Profissional",
+                education_title: "Formação e Qualificações",
+                cert_title: "Certificações em Cloud",
+                cert_view: "Ver Credencial →",
+                academic_title: "Formação Acadêmica",
+                academic_degree: "Tecnologia em Análise e Desenvolvimento de Sistemas ",
+                academic_status: "(Em andamento)",
+                dev_title: "Desenvolvimento Profissional (Alura)",
+                contact_title: "Entre em Contato",
+                footer_name: "Daniel Lima",
+                footer_availability: "Disponível para novas oportunidades.",
+                footer_credits: "&copy; 2024 - Desenvolvido para Daniel Lima",
+                chart_labels: ['Cloud', 'Segurança', 'Redes', 'Automação', 'Virtualização', 'Monitoramento'],
+                chart_dataset_label: 'Nível de Proficiência',
+                details_toggle_view: "Ver detalhes +",
+                details_toggle_hide: "Ocultar detalhes -",
+            },
+            en: {
+                name_header: "Daniel Lima",
+                nav_about: "About",
+                nav_skills: "Skills",
+                nav_experience: "Experience",
+                nav_education: "Education",
+                nav_contact_main: "Contact",
+                nav_contact_btn: "Contact",
+                print_button_text: "Print",
+                nav_about_mobile: "About",
+                nav_skills_mobile: "Skills",
+                nav_experience_mobile: "Experience",
+                nav_education_mobile: "Education",
+                nav_contact_mobile: "Contact",
+                main_name: "Daniel Lima",
+                main_title: "IT Infrastructure Analyst | AWS & GCP Cloud | Networks & Security",
+                main_summary: "Infrastructure Analyst with over 5 years of experience in corporate environments, focused on high availability, Cloud (AWS/GCP), Information Security, Networking, Virtualization, Backup and Monitoring. I work proactively to prevent incidents, optimize costs and automate tasks, always aiming for stability, security and continuous improvement of IT services.",
+                skills_title: "Core Skills",
+                skill_tab_cloud: "Cloud Computing",
+                skill_tab_security: "Security",
+                skill_tab_networks: "Networks",
+                skill_tab_automation: "Automation & DevOps",
+                skill_tab_systems: "Systems",
+                validated_skills_title: "Validated Skills (Certifications)",
+                in_demand_tag: "IN DEMAND",
+                future_proof_tag: "FUTURE PROOF",
+                experience_title: "Professional Experience",
+                education_title: "Education & Qualifications",
+                cert_title: "Cloud Certifications",
+                cert_view: "View Credential →",
+                academic_title: "Academic Background",
+                academic_degree: "Associate Degree in Systems Analysis and Development ",
+                academic_status: "(Ongoing)",
+                dev_title: "Professional Development (Alura)",
+                contact_title: "Get in Touch",
+                footer_name: "Daniel Lima",
+                footer_availability: "Available for new opportunities.",
+                footer_credits: "&copy; 2024 - Developed for Daniel Lima",
+                chart_labels: ['Cloud', 'Security', 'Networks', 'Automation', 'Virtualization', 'Monitoring'],
+                chart_dataset_label: 'Proficiency Level',
+                details_toggle_view: "View details +",
+                details_toggle_hide: "Hide details -",
+            }
+        };
+
+        const skillTabsData = {
+            pt: {
+                cloud: ['AWS (EC2, S3, VPC, RDS)', 'Google Cloud (GCP)', 'Google Workspace', 'Arquitetura de Cloud', 'Disaster Recovery'],
+                security: ['Cloud Security', 'IAM', 'VPN/IPSec', 'Firewall (pfSense, Fortigate)', 'LGPD & Boas Práticas'],
+                networks: ['TCP/IP', 'VLANs', 'Roteamento', 'Switches Cisco/HP/Dell', 'Active Directory'],
+                automation: ['Terraform (IaC)', 'Ansible', 'Shell Script (Bash)', 'PowerShell', 'Git & CI/CD'],
+                systems: ['Windows Server', 'Linux (Ubuntu, Debian, CentOS)', 'VMware ESXi/vSphere', 'Zabbix', 'Grafana', 'Bacula', 'SQL Server']
+            },
+            en: {
+                cloud: ['AWS (EC2, S3, VPC, RDS)', 'Google Cloud (GCP)', 'Google Workspace', 'Cloud Architecture', 'Disaster Recovery'],
+                security: ['Cloud Security', 'IAM', 'VPN/IPSec', 'Firewall (pfSense, Fortigate)', 'LGPD & Best Practices'],
+                networks: ['TCP/IP', 'VLANs', 'Routing', 'Cisco/HP/Dell Switches', 'Active Directory'],
+                automation: ['Terraform (IaC)', 'Ansible', 'Shell Script (Bash)', 'PowerShell', 'Git & CI/CD'],
+                systems: ['Windows Server', 'Linux (Ubuntu, Debian, CentOS)', 'VMware ESXi/vSphere', 'Zabbix', 'Grafana', 'Bacula', 'SQL Server']
+            }
+        };
+
+        const timelineData = {
+            pt: [
+                {
+                    title: "Analista de Infraestrutura de TI",
+                    company: "Sodré Santoro Leilões",
+                    date: "ago 2020 - Presente",
+                    details: [
+                        "<b>Cloud AWS & GCP:</b> Administração de ambientes em AWS (EC2, S3, RDS, VPC, IAM) e Google Cloud, com foco em disponibilidade e otimização de custos.",
+                        "<b>Segurança da Informação:</b> Gestão de firewalls (pfSense, Fortigate), VPN/IPSec e aplicação de políticas alinhadas à LGPD.",
+                        "<b>Monitoramento & Incident Response:</b> Monitoramento proativo com Zabbix e Grafana, atuando na prevenção e resposta a incidentes críticos.",
+                        "<b>Infraestrutura On-premises:</b> Administração de VMware ESXi/vSphere, switches gerenciáveis e Active Directory (GPO, DNS, DHCP).",
+                        "<b>Backup & DR:</b> Rotinas de backup e planos de Disaster Recovery utilizando Bacula.",
+                        "<b>Automação:</b> Criação de scripts (PowerShell, Bash) e uso de Git para padronizar e automatizar tarefas recorrentes."
+                    ]
                 },
-                en: {
-                    name_header: "Daniel Lima",
-                    nav_about: "About",
-                    nav_skills: "Skills",
-                    nav_experience: "Experience",
-                    nav_education: "Education",
-                    nav_contact_main: "Contact",
-                    nav_contact_btn: "Contact",
-                    print_button_text: "Print",
-                    nav_about_mobile: "About",
-                    nav_skills_mobile: "Skills",
-                    nav_experience_mobile: "Experience",
-                    nav_education_mobile: "Education",
-                    nav_contact_mobile: "Contact",
-                    main_name: "Daniel Lima",
-                    main_title: "IT Infrastructure Analyst | Networks & Security | AWS & GCP Cloud",
-                    main_summary: "Infrastructure Analyst with over 5 years of experience, specializing in ensuring the high availability, security, and efficiency of hybrid IT environments. I have solid experience in network administration, information security, and implementing cloud solutions on AWS and GCP, with a focus on disaster recovery, automation, and proactive monitoring. I am seeking a new challenge where I can apply my skills to optimize infrastructure and contribute to innovative projects.",
-                    skills_title: "Core Skills",
-                    skill_tab_cloud: "Cloud Computing",
-                    skill_tab_security: "Security",
-                    skill_tab_networks: "Networks",
-                    skill_tab_automation: "Automation & DevOps",
-                    skill_tab_systems: "Systems",
-                    validated_skills_title: "Validated Skills (Credly)",
-                    in_demand_tag: "IN DEMAND",
-                    future_proof_tag: "FUTURE PROOF",
-                    experience_title: "Professional Experience",
-                    education_title: "Education & Qualifications",
-                    cert_title: "Official Certification",
-                    cert_view: "View Credential &rarr;",
-                    academic_title: "Academic Background",
-                    academic_degree: "Bachelor's in Information Systems Management ",
-                    academic_status: "(Ongoing)",
-                    dev_title: "Professional Development (Alura)",
-                    contact_title: "Get in Touch",
-                    footer_name: "Daniel Lima",
-                    footer_availability: "Available for new opportunities.",
-                    footer_credits: "&copy; 2024 - Developed for Daniel Lima",
-                    chart_labels: ['Cloud', 'Security', 'Networks', 'Automation', 'Virtualization', 'Monitoring'],
-                    chart_dataset_label: 'Proficiency Level',
-                    details_toggle_view: "View details +",
-                    details_toggle_hide: "Hide details -",
-                }
-            };
-
-            const skillTabsData = {
-                pt: {
-                    cloud: ['AWS', 'Google Cloud (GCP)', 'Cloud Architecture', 'Compute Engine', 'Cloud Storage'],
-                    security: ['Cloud Security', 'IAM', 'Authentication', 'Firewall (pfSense)', 'VPN (IPSec)'],
-                    networks: ['Network Management', 'TCP/IP', 'VLANs & Roteamento', 'Active Directory'],
-                    automation: ['Terraform (IaC)', 'Kubernetes', 'Docker', 'Ansible', 'Python', 'Pub/Sub'],
-                    systems: ['System Monitoring', 'Database Queries', 'Windows Server', 'Linux', 'VMware']
+                {
+                    title: "Analista de Suporte de TI",
+                    company: "Sodré Santoro Leilões",
+                    date: "fev 2020 - jul 2020",
+                    details: [
+                        "Suporte técnico N1/N2/N3 para usuários internos, resolvendo problemas de hardware, sistema operacional e rede.",
+                        "Administração de contas no Active Directory, permissões de acesso e e-mails corporativos via Google Workspace.",
+                        "Organização de chamados, priorização de demandas e aplicação de boas práticas ITIL."
+                    ]
                 },
-                en: {
-                    cloud: ['AWS', 'Google Cloud (GCP)', 'Cloud Architecture', 'Compute Engine', 'Cloud Storage'],
-                    security: ['Cloud Security', 'IAM', 'Authentication', 'Firewall (pfSense)', 'VPN (IPSec)'],
-                    networks: ['Network Management', 'TCP/IP', 'VLANs & Routing', 'Active Directory'],
-                    automation: ['Terraform (IaC)', 'Kubernetes', 'Docker', 'Ansible', 'Python', 'Pub/Sub'],
-                    systems: ['System Monitoring', 'Database Queries', 'Windows Server', 'Linux', 'VMware']
+                {
+                    title: "Assistente de Remoção",
+                    company: "Sodré Santoro Leilões",
+                    date: "dez 2017 - jan 2020",
+                    details: [
+                        "Atendimento personalizado a seguradoras (Bradesco, Tokio Marine, Porto Seguro, entre outras).",
+                        "Gestão da logística de remoção de veículos sinistrados, controle de prazos e acompanhamento de indicadores.",
+                        "Negociação com oficinas e parceiros para garantir melhor custo-benefício."
+                    ]
+                },
+                {
+                    title: "Analista de Logística",
+                    company: "Doxs Logística",
+                    date: "ago 2015 - mai 2017",
+                    details: [
+                        "Planejamento de rotas, rastreamento de cargas e coordenação de equipe operacional.",
+                        "Uso de sistemas WMS, ERP e SAP para controle de estoque, emissão de NF-e e CT-e e análise de performance de entregas.",
+                        "Relacionamento com clientes e parceiros, garantindo qualidade e cumprimento de SLA."
+                    ]
+                },
+                {
+                    title: "Conferente",
+                    company: "Mega do Brasil",
+                    date: "dez 2012 - jun 2015",
+                    details: [
+                        "Conferência de mercadorias utilizando sistemas informatizados e scanners.",
+                        "Registro de divergências, organização de estoque e apoio na emissão de documentos fiscais.",
+                        "Atuação em equipe para cumprimento de metas diárias de conferência."
+                    ]
                 }
-            };
-            
-            const timelineData = {
-                 pt: [
-                    {
-                        title: "Analista de Infraestrutura de TI",
-                        company: "Sodré Santoro Leilões",
-                        date: "ago 2020 - Presente",
-                        details: [
-                            "<b>Cloud AWS:</b> Administração e otimização da infraestrutura na AWS (EC2, S3, RDS, VPC, IAM).",
-                            "<b>Segurança da Informação:</b> Gerenciamento de firewalls (pfSense, Fortigate), VPNs e implementação de políticas (LGPD, ISO 27001).",
-                            "<b>Monitoramento:</b> Uso de Zabbix e Grafana para monitoramento proativo e resposta a incidentes.",
-                            "<b>Infraestrutura Local:</b> Administração de VMware, switches e Active Directory (GPO, DNS, DHCP).",
-                            "<b>Disaster Recovery:</b> Implementação e gerenciamento de rotinas de backup com Bacula."
-                        ]
-                    },
-                     {
-                        title: "Analista de Suporte de TI",
-                        company: "Sodré Santoro Leilões",
-                        date: "fev 2020 - jul 2020",
-                        details: [
-                            "Prestação de suporte técnico especializado (Níveis 1 a 3), diagnosticando e resolvendo problemas de hardware, software e redes.",
-                            "Gerenciamento do ciclo de vida de usuários no Active Directory e administração de permissões e e-mails no Google Workspace."
-                        ]
-                    },
-                    {
-                        title: "Assistente de Remoção",
-                        company: "Sodré Santoro Leilões",
-                        date: "dez 2017 - jan 2020",
-                        details: [
-                           "Atendimento personalizado a companhias de seguros (Bradesco, Tokio Marine, Porto Seguro, etc.).",
-                           "Gestão do processo de remoção de sinistros, otimização da logística e acompanhamento de indicadores de performance.",
-                           "Negociação com clientes e oficinas para garantir melhores preços e prazos."
-                        ]
-                    },
-                    {
-                        title: "Analista de Logística",
-                        company: "Doxs Logística",
-                        date: "ago 2015 - mai 2017",
-                        details: [
-                            "Liderança de equipe, recrutamento e seleção de novos talentos.",
-                            "Planejamento e roteirização para otimização de entregas, rastreamento de cargas e atendimento ao cliente.",
-                            "Emissão de documentos fiscais (NF-e, CT-e) e análise de performance.",
-                            "Gerenciamento de sistemas (WMS, ERP, SAP) e negociação com parceiros."
-                        ]
-                    },
-                    {
-                        title: "Conferente",
-                        company: "Mega do Brasil",
-                        date: "dez 2012 - jun 2015",
-                        details: [
-                            "Conferência manual e automatizada de produtos utilizando scanners.",
-                            "Registro de discrepâncias, controle de estoque e atualização de sistemas.",
-                            "Separação, organização de produtos e emissão de relatórios de conferência."
-                        ]
-                    }
-                ],
-                 en: [
-                    {
-                        title: "IT Infrastructure Analyst",
-                        company: "Sodré Santoro Leilões",
-                        date: "Aug 2020 - Present",
-                        details: [
-                            "<b>AWS Cloud:</b> Administration and optimization of AWS infrastructure (EC2, S3, RDS, VPC, IAM).",
-                            "<b>Information Security:</b> Management of firewalls (pfSense, Fortigate), VPNs, and implementation of policies (LGPD, ISO 27001).",
-                            "<b>Monitoring:</b> Use of Zabbix and Grafana for proactive monitoring and incident response.",
-                            "<b>On-Premise Infrastructure:</b> Administration of VMware, switches, and Active Directory (GPO, DNS, DHCP).",
-                            "<b>Disaster Recovery:</b> Implementation and management of backup routines with Bacula."
-                        ]
-                    },
-                     {
-                        title: "IT Support Analyst",
-                        company: "Sodré Santoro Leilões",
-                        date: "Feb 2020 - Jul 2020",
-                        details: [
-                            "Provided specialized technical support (Tiers 1 to 3), diagnosing and resolving hardware, software, and network issues.",
-                            "Managed user lifecycle in Active Directory and administered permissions and emails in Google Workspace."
-                        ]
-                    },
-                    {
-                        title: "Removal Assistant",
-                        company: "Sodré Santoro Leilões",
-                        date: "Dec 2017 - Jan 2020",
-                        details: [
-                           "Personalized service to insurance companies (Bradesco, Tokio Marine, Porto Seguro, etc.).",
-                           "Managed the vehicle claims removal process, optimizing logistics and monitoring performance indicators.",
-                           "Negotiated with clients and workshops to ensure the best prices and deadlines."
-                        ]
-                    },
-                    {
-                        title: "Logistics Analyst",
-                        company: "Doxs Logística",
-                        date: "Aug 2015 - May 2017",
-                        details: [
-                            "Team leadership, recruitment, and selection of new talent.",
-                            "Planning and routing for delivery optimization, cargo tracking, and customer service.",
-                            "Issuance of tax documents (NF-e, CT-e) and performance analysis.",
-                            "System management (WMS, ERP, SAP) and negotiation with partners."
-                        ]
-                    },
-                    {
-                        title: "Checker",
-                        company: "Mega do Brasil",
-                        date: "Dec 2012 - Jun 2015",
-                        details: [
-                            "Manual and automated product checking using scanners.",
-                            "Recorded discrepancies, controlled inventory, and updated systems.",
-                            "Separated, organized products, and issued checking reports."
-                        ]
-                    }
-                ]
-            };
-            
-            const coursesData = {
-                pt: [
-                    { name: "Formação DevOps", hours: "116 horas" },
-                    { name: "AWS (EC2, VPC, S3)", hours: "30 horas" },
-                    { name: "Redes e TCP/IP", hours: "20 horas" },
-                    { name: "Ansible & Terraform", hours: "16 horas" },
-                    { name: "VMware", hours: "15 horas" },
-                    { name: "Python", hours: "12 horas" },
-                    { name: "Docker", hours: "10 horas" }
-                ],
-                en: [
-                    { name: "DevOps Training", hours: "116 hours" },
-                    { name: "AWS (EC2, VPC, S3)", hours: "30 hours" },
-                    { name: "Networking & TCP/IP", hours: "20 hours" },
-                    { name: "Ansible & Terraform", hours: "16 hours" },
-                    { name: "VMware", hours: "15 hours" },
-                    { name: "Python", hours: "12 hours" },
-                    { name: "Docker", hours: "10 hours" }
-                ]
-            }
-
-            let currentLang = 'pt';
-            let skillsChart;
-
-            function renderChart(lang) {
-                const ctx = document.getElementById('skillsChart').getContext('2d');
-                if (skillsChart) {
-                    skillsChart.destroy();
+            ],
+            en: [
+                {
+                    title: "IT Infrastructure Analyst",
+                    company: "Sodré Santoro Leilões",
+                    date: "Aug 2020 - Present",
+                    details: [
+                        "<b>AWS & GCP Cloud:</b> Administration of AWS (EC2, S3, RDS, VPC, IAM) and Google Cloud environments focusing on availability and cost optimization.",
+                        "<b>Information Security:</b> Management of firewalls (pfSense, Fortigate), VPN/IPSec and security policies aligned with LGPD.",
+                        "<b>Monitoring & Incident Response:</b> Proactive monitoring with Zabbix and Grafana, acting on prevention and resolution of critical incidents.",
+                        "<b>On-premises Infrastructure:</b> Administration of VMware ESXi/vSphere, managed switches and Active Directory (GPO, DNS, DHCP).",
+                        "<b>Backup & DR:</b> Backup routines and Disaster Recovery plans using Bacula.",
+                        "<b>Automation:</b> Scripting (PowerShell, Bash) and Git to standardize and automate recurrent tasks."
+                    ]
+                },
+                {
+                    title: "IT Support Analyst",
+                    company: "Sodré Santoro Leilões",
+                    date: "Feb 2020 - Jul 2020",
+                    details: [
+                        "Provided tier 1–3 support for internal users, troubleshooting hardware, OS and network issues.",
+                        "Managed accounts in Active Directory, access permissions and corporate email via Google Workspace.",
+                        "Organized tickets, prioritized demands and applied ITIL best practices."
+                    ]
+                },
+                {
+                    title: "Removal Assistant",
+                    company: "Sodré Santoro Leilões",
+                    date: "Dec 2017 - Jan 2020",
+                    details: [
+                        "Provided service to major insurance companies (Bradesco, Tokio Marine, Porto Seguro, among others).",
+                        "Managed logistics for removal of damaged vehicles, controlling deadlines and performance indicators.",
+                        "Negotiated with workshops and partners to ensure the best cost-benefit ratio."
+                    ]
+                },
+                {
+                    title: "Logistics Analyst",
+                    company: "Doxs Logística",
+                    date: "Aug 2015 - May 2017",
+                    details: [
+                        "Route planning, cargo tracking and coordination of operational teams.",
+                        "Use of WMS, ERP and SAP systems for stock control, tax document issuance (NF-e, CT-e) and delivery performance analysis.",
+                        "Customer and partner relationship management, ensuring quality and SLA compliance."
+                    ]
+                },
+                {
+                    title: "Checker",
+                    company: "Mega do Brasil",
+                    date: "Dec 2012 - Jun 2015",
+                    details: [
+                        "Checked goods using scanners and internal systems.",
+                        "Recorded discrepancies, organized stock and supported tax document issuance.",
+                        "Worked as part of a team to meet daily targets."
+                    ]
                 }
-                skillsChart = new Chart(ctx, {
-                    type: 'radar',
-                    data: {
-                        labels: translations[lang].chart_labels,
-                        datasets: [{
-                            label: translations[lang].chart_dataset_label,
-                            data: [9, 9, 8, 8, 8, 9],
-                            backgroundColor: 'rgba(37, 99, 235, 0.2)',
-                            borderColor: 'rgba(37, 99, 235, 1)',
-                            borderWidth: 2,
-                            pointBackgroundColor: 'rgba(37, 99, 235, 1)',
-                            pointBorderColor: '#fff',
-                            pointHoverBackgroundColor: '#fff',
-                            pointHoverBorderColor: 'rgba(37, 99, 235, 1)'
-                        }]
+            ]
+        };
+
+        const coursesData = {
+            pt: [
+                { name: "Formação AWS (Lightsail, EC2, S3, VPC, RDS, DynamoDB)", hours: "47 horas" },
+                { name: "Formação DevOps (Linux, Redes, Terraform, Docker, NGINX)", hours: "116 horas" },
+                { name: "Redes: conceitos e intranet", hours: "22 horas" },
+                { name: "Linux I & II", hours: "12 horas" },
+                { name: "Ansible & Terraform", hours: "20 horas" },
+                { name: "Docker: containers", hours: "10 horas" },
+                { name: "Flutter: criando um app", hours: "15 horas" },
+                { name: "Python & Java OO", hours: "28 horas" }
+            ],
+            en: [
+                { name: "AWS Track (Lightsail, EC2, S3, VPC, RDS, DynamoDB)", hours: "47 hours" },
+                { name: "DevOps Track (Linux, Networking, Terraform, Docker, NGINX)", hours: "116 hours" },
+                { name: "Networking: concepts & intranet", hours: "22 hours" },
+                { name: "Linux I & II", hours: "12 hours" },
+                { name: "Ansible & Terraform", hours: "20 hours" },
+                { name: "Docker: containers", hours: "10 hours" },
+                { name: "Flutter: building an app", hours: "15 hours" },
+                { name: "Python & Java OO", hours: "28 hours" }
+            ]
+        };
+
+        let currentLang = 'pt';
+        let skillsChart;
+
+        function renderChart(lang) {
+            const ctx = document.getElementById('skillsChart').getContext('2d');
+            if (skillsChart) {
+                skillsChart.destroy();
+            }
+            skillsChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: translations[lang].chart_labels,
+                    datasets: [{
+                        label: translations[lang].chart_dataset_label,
+                        data: [9, 9, 8, 8, 8, 9],
+                        backgroundColor: 'rgba(37, 99, 235, 0.2)',
+                        borderColor: 'rgba(37, 99, 235, 1)',
+                        borderWidth: 2,
+                        pointBackgroundColor: 'rgba(37, 99, 235, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(37, 99, 235, 1)'
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: 'rgba(0,0,0,0.1)' },
+                            grid: { color: 'rgba(0,0,0,0.1)' },
+                            pointLabels: { font: { size: 12, weight: 'bold' }, color: '#404040' },
+                            ticks: { display: false, stepSize: 1 },
+                            suggestedMin: 3,
+                            suggestedMax: 10
+                        }
                     },
-                    options: {
-                        maintainAspectRatio: false,
-                        scales: {
-                            r: {
-                                angleLines: { color: 'rgba(0, 0, 0, 0.1)' },
-                                grid: { color: 'rgba(0, 0, 0, 0.1)' },
-                                pointLabels: {
-                                    font: { size: 12, weight: 'bold' },
-                                    color: '#404040'
-                                },
-                                ticks: {
-                                    display: false,
-                                    stepSize: 1
-                                },
-                                suggestedMin: 3,
-                                suggestedMax: 10
-                            }
-                        },
-                        plugins: {
-                            legend: {
-                                display: false
-                            }
-                        }
-                    }
-                });
-            }
-
-            function renderTimeline(lang) {
-                const container = document.getElementById('timeline-container');
-                container.innerHTML = '';
-                timelineData[lang].forEach(item => {
-                    const timelineItem = document.createElement('div');
-                    timelineItem.className = 'timeline-item mb-12';
-                    
-                    let detailsList = '';
-                    item.details.forEach(detail => {
-                        detailsList += `<li class="list-disc pl-5 space-y-2">${detail}</li>`;
-                    });
-                    
-                    timelineItem.innerHTML = `
-                        <h3 class="text-xl font-bold text-zinc-800">${item.title}</h3>
-                        <p class="text-blue-600 font-medium mb-2">${item.company} | ${item.date}</p>
-                        <button class="details-toggle text-sm text-blue-500 hover:underline">${translations[lang].details_toggle_view}</button>
-                        <div class="details-content mt-4 text-zinc-600">
-                            <ul>${detailsList}</ul>
-                        </div>
-                    `;
-                    container.appendChild(timelineItem);
-                });
-
-                const toggles = document.querySelectorAll('.details-toggle');
-                toggles.forEach(toggle => {
-                    toggle.addEventListener('click', () => {
-                        const content = toggle.nextElementSibling;
-                        content.classList.toggle('open');
-                        if(content.classList.contains('open')) {
-                            toggle.textContent = translations[currentLang].details_toggle_hide;
-                        } else {
-                            toggle.textContent = translations[currentLang].details_toggle_view;
-                        }
-                    });
-                });
-            }
-            
-            function renderSkillTabs(lang) {
-                 const container = document.getElementById('tab-content');
-                 container.innerHTML = '';
-                 
-                 const tabData = skillTabsData[lang];
-                 Object.keys(tabData).forEach((key, index) => {
-                     const div = document.createElement('div');
-                     div.dataset.content = key;
-                     div.className = `grid grid-cols-2 sm:grid-cols-3 gap-4 ${index === 0 ? '' : 'hidden'}`;
-                     
-                     const itemsHtml = tabData[key].map(item => `<span class="${index === 0 ? 'bg-blue-50 text-blue-800' : 'bg-zinc-200 text-zinc-800'} text-center p-2 rounded-lg text-sm">${item}</span>`).join('');
-                     div.innerHTML = itemsHtml;
-                     container.appendChild(div);
-                 });
-            }
-            
-            function renderCourses(lang) {
-                const container = document.getElementById('courses-container');
-                container.innerHTML = '';
-                coursesData[lang].forEach(course => {
-                    const courseItem = document.createElement('div');
-                    courseItem.className = 'bg-zinc-100 p-3 rounded-md';
-                    courseItem.innerHTML = `
-                        <p class="font-semibold text-sm">${course.name}</p>
-                        <p class="text-xs text-zinc-500">${course.hours}</p>
-                    `;
-                    container.appendChild(courseItem);
-                });
-            }
-            
-            function setLanguage(lang) {
-                currentLang = lang;
-                document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
-                const elements = document.querySelectorAll('[data-lang-key]');
-                elements.forEach(el => {
-                    const key = el.dataset.langKey;
-                    if (translations[lang][key]) {
-                         if (key === 'academic_degree') {
-                            el.childNodes[0].nodeValue = translations[lang][key];
-                        } else {
-                            el.innerHTML = translations[lang][key];
-                        }
-                    }
-                });
-
-                const academicStatusEl = document.querySelector('[data-lang-key="academic_status"]');
-                if (academicStatusEl) {
-                    academicStatusEl.innerHTML = translations[lang]['academic_status'];
+                    plugins: { legend: { display: false } }
                 }
+            });
+        }
 
-                renderChart(lang);
-                renderTimeline(lang);
-                renderSkillTabs(lang);
-                renderCourses(lang);
+        function renderTimeline(lang) {
+            const container = document.getElementById('timeline-container');
+            container.innerHTML = '';
+            timelineData[lang].forEach(item => {
+                const timelineItem = document.createElement('div');
+                timelineItem.className = 'timeline-item mb-12 relative';
 
-                const tabButtons = document.querySelectorAll('.tab-btn');
-                tabButtons.forEach(tab => {
-                    tab.addEventListener('click', (e) => {
-                        const targetKey = e.currentTarget.dataset.tab;
-                        const targetContent = document.querySelector(`[data-content="${targetKey}"]`);
-
-                        document.querySelectorAll('[data-content]').forEach(c => c.classList.add('hidden'));
-                        if (targetContent) targetContent.classList.remove('hidden');
-
-                        tabButtons.forEach(t => {
-                            t.classList.remove('bg-blue-100', 'text-blue-700');
-                            t.classList.add('bg-zinc-100', 'text-zinc-700');
-                        });
-                        e.currentTarget.classList.add('bg-blue-100', 'text-blue-700');
-                        e.currentTarget.classList.remove('bg-zinc-100', 'text-zinc-700');
-                    });
+                let detailsList = '';
+                item.details.forEach(detail => {
+                    detailsList += `<li class="list-disc pl-5 space-y-2">${detail}</li>`;
                 });
-                
-                document.querySelector('.tab-btn[data-tab="cloud"]').click();
+
+                timelineItem.innerHTML = `
+                    <h3 class="text-xl font-bold text-zinc-800">${item.title}</h3>
+                    <p class="text-blue-600 font-medium mb-2">${item.company} | ${item.date}</p>
+                    <button class="details-toggle text-sm text-blue-500 hover:underline">${translations[lang].details_toggle_view}</button>
+                    <div class="details-content mt-4 text-zinc-600">
+                        <ul class="space-y-1">${detailsList}</ul>
+                    </div>
+                `;
+                container.appendChild(timelineItem);
+            });
+
+            const toggles = document.querySelectorAll('.details-toggle');
+            toggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const content = toggle.nextElementSibling;
+                    content.classList.toggle('open');
+                    if (content.classList.contains('open')) {
+                        toggle.textContent = translations[currentLang].details_toggle_hide;
+                    } else {
+                        toggle.textContent = translations[currentLang].details_toggle_view;
+                    }
+                });
+            });
+        }
+
+        function renderSkillTabs(lang) {
+            const container = document.getElementById('tab-content');
+            container.innerHTML = '';
+
+            const tabData = skillTabsData[lang];
+            Object.keys(tabData).forEach((key, index) => {
+                const div = document.createElement('div');
+                div.dataset.content = key;
+                div.className = `grid grid-cols-2 sm:grid-cols-3 gap-4 ${index === 0 ? '' : 'hidden'}`;
+
+                const itemsHtml = tabData[key].map(item =>
+                    `<span class="bg-zinc-100 text-zinc-800 text-center p-2 rounded-lg text-sm">${item}</span>`
+                ).join('');
+                div.innerHTML = itemsHtml;
+                container.appendChild(div);
+            });
+        }
+
+        function renderCourses(lang) {
+            const container = document.getElementById('courses-container');
+            container.innerHTML = '';
+            coursesData[lang].forEach(course => {
+                const courseItem = document.createElement('div');
+                courseItem.className = 'bg-zinc-100 p-3 rounded-md';
+                courseItem.innerHTML = `
+                    <p class="font-semibold text-sm">${course.name}</p>
+                    <p class="text-xs text-zinc-500">${course.hours}</p>
+                `;
+                container.appendChild(courseItem);
+            });
+        }
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+
+            const elements = document.querySelectorAll('[data-lang-key]');
+            elements.forEach(el => {
+                const key = el.dataset.langKey;
+                if (translations[lang][key]) {
+                    if (key === 'academic_degree') {
+                        el.childNodes[0].nodeValue = translations[lang][key];
+                    } else {
+                        el.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+
+            const academicStatusEl = document.querySelector('[data-lang-key="academic_status"]');
+            if (academicStatusEl) {
+                academicStatusEl.innerHTML = translations[lang]['academic_status'];
             }
 
-            const langButtons = document.querySelectorAll('.lang-btn');
-            langButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const lang = button.dataset.lang;
-                    setLanguage(lang);
-                    langButtons.forEach(btn => btn.classList.remove('active'));
-                    document.querySelectorAll(`.lang-btn[data-lang="${lang}"]`).forEach(b => b.classList.add('active'));
+            renderChart(lang);
+            renderTimeline(lang);
+            renderSkillTabs(lang);
+            renderCourses(lang);
+
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(tab => {
+                tab.addEventListener('click', (e) => {
+                    const targetKey = e.currentTarget.dataset.tab;
+                    const targetContent = document.querySelector(`[data-content="${targetKey}"]`);
+
+                    document.querySelectorAll('[data-content]').forEach(c => c.classList.add('hidden'));
+                    if (targetContent) targetContent.classList.remove('hidden');
+
+                    tabButtons.forEach(t => {
+                        t.classList.remove('bg-blue-100', 'text-blue-700');
+                        t.classList.add('bg-zinc-100', 'text-zinc-700');
+                    });
+                    e.currentTarget.classList.add('bg-blue-100', 'text-blue-700');
+                    e.currentTarget.classList.remove('bg-zinc-100', 'text-zinc-700');
                 });
             });
 
-            // Print button
-            document.getElementById('print-btn').addEventListener('click', () => {
-                window.print();
-            });
+            const defaultTab = document.querySelector('.tab-btn[data-tab="cloud"]');
+            if (defaultTab) defaultTab.click();
+        }
 
-            // Initial render
-            setLanguage('pt');
-
-            // Mobile menu toggle
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-
-            // Close mobile menu on link click
-            document.querySelectorAll('#mobile-menu a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                });
+        const langButtons = document.querySelectorAll('.lang-btn');
+        langButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const lang = button.dataset.lang;
+                setLanguage(lang);
+                langButtons.forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll(`.lang-btn[data-lang="${lang}"]`).forEach(b => b.classList.add('active'));
             });
         });
-    </script>
+
+        const printBtn = document.getElementById('print-btn');
+        if (printBtn) {
+            printBtn.addEventListener('click', () => window.print());
+        }
+
+        setLanguage('pt');
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    });
+</script>
 </body>
 </html>
-
